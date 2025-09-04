@@ -1,0 +1,35 @@
+import './App.css';
+
+
+function App() {
+
+    const item = [
+        {title: '바지', price: 10000},
+        {title: '양말', price: 1000},
+        {title: '티셔츠', price: 5000}
+    ]
+
+
+    return (
+    <>
+        <div className="wrapper">
+          
+            {
+
+              item.map((itemProperty, index) => {
+                return (
+                <div className="items" key={index}>
+                <h3>{itemProperty.title}</h3>
+                <p>{itemProperty.price}</p>
+                </div>
+                );
+              })
+
+            }
+
+        </div>
+    </>
+    );
+}
+
+export default App
