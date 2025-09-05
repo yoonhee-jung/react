@@ -1,37 +1,41 @@
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import ProductList from './components/ProductList.jsx'
 import './App.css'
-import TabUI from './components/TabUI.jsx'
-import { useState } from 'react';
+import {Link, Outlet, useNavigate} from 'react-router-dom'
 
 function App() {
-  const [prodFlg, setProdFlg] = useState(true);
-  const [tabFlg, setTabFlg] = useState(false);
+  // 컴포넌트 내부에서 프로그래밍 방시긍로 페이지 이동을 구현
+  const navigate = useNavigate();
 
-  const viewProductList = () => {
-    setProdFlg(true);
-    setTabFlg(false);
-  }
 
-  const viewTabUi = () => {
-    setProdFlg(false)
-    setTabFlg(true)
+
+
+  const ok = ()  => {
+    navigate('/ok')
   }
 
   return (
-    <>
-    <Header></Header>
-    <main>
-      <div>
-        <span onClick={viewProductList}>상품 리스트</span>
-        <span onClick={viewTabUi}>테스트</span>
-      </div>
-      {tabFlg && <TabUI></TabUI>}
-      {prodFlg && <ProductList></ProductList>}
-    </main>
-    <Footer></Footer>
-    </>
+<>
+<header><h2>..</h2>
+<div className="nav">
+  <Link to={'/list'}>리스트 페이지</Link>
+  <Link to={'/detail'}>상세 페이지</Link>
+  <br />
+  <NavLink to ={'/list'}>리스트 페이지</NavLink>
+  <NavLink to ={'/detail'}>상세 페이지</NavLink>
+  <br />
+  <button type="button" onClick={ok}>확인</button>
+</div>
+</header>
+<main>
+  <Outlet></Outlet>
+</main>
+{/*라우터의 자식 컴포넌트를 출력 */}
+<footer>
+  <p>copyright.</p>
+</footer>
+</>
+
+
+
   )
 }
 
