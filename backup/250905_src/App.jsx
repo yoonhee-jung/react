@@ -34,11 +34,11 @@ function App() {
         <Outlet></Outlet>
       </div>
       <div>
-          {/* <span onClick={viewProductList}>상품 리스트</span>
-          <span onClick={viewTabUi}>테스트</span> */}
+           <span onClick={viewProductList}>상품 리스트</span>
+          <span onClick={viewTabUi}>테스트</span> 
       </div>
-      {/* {tabFlg && <TabUI></TabUI>}
-      {prodFlg && <ProductList></ProductList>} */}
+       {tabFlg && <TabUI></TabUI>}
+      {prodFlg && <ProductList></ProductList>} 
       
     </main>
     <Footer></Footer>

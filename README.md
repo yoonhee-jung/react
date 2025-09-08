@@ -23,3 +23,24 @@ npm install react-router-dom
 4. 라우터로 관리하고 싶은 컴포넌트를 만듦
 
 5. 라우터 컴포넌트의 라우터 객체 정의를 HTML 구조에 맞게 설정함
+
+<!-- Redux -->
+
+상세 > 기능별로 컴포넌트 쪼개기도 함
+
+<!-- 상태 관리 라이브러리, 중앙 집중식 상태관리 패턴 구현 -->
+<!-- 기본적으로 포함된 것 아님, 라이브러리임 -->
+1. Redux 설치 
+npm install @reduxjs/toolkit react-redux
+
+2. Redux Store 생성
+경로 예시: src/store/store.js
+
+3. Slices 생성
+경로 예시: src/store/slices-modules-둘 중 상관 없음/**
+
+4. 생성한 Slices를 Store에 추가
+
+5. main.jsx에 React Redux <Provider> 추가 (최상위 컴포넌트일 것, StrictMode를 제외한 최상위 컴포넌트일 것)
+
+6. 사용
